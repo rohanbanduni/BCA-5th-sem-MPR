@@ -1,11 +1,35 @@
-from flask import Flask, render_template, request
-#import your_ml_model  # Import your machine learning model module
+import pickle
+import os
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
+
+base_path = os.path.abspath(os.path.dirname(__file__))
+model_path = os.path.join(base_path, 'pipe.pkl')
+
+with open(model_path, 'rb') as model_file:
+    model = pickle.load(model_file)
 
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/test', methods=['GET', 'POST'])
+def test():
+    if request.method == 'POST':
+        user_input = []
+        features = [
+            'HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack',
+            'PhysActivity', 'Fruits', 'Veggies', 'HvyAlcoholConsump', 'AnyHealthcare', 'NoDocbcCost',
+            'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Sex', 'Age', 'Education', 'Income'
+        ]
+        for feature in features:
+            user_input.append(int(request.form.get(feature)))
+
+        prediction = model.predict([user_input])
+        return render_template('predict.html', prediction=prediction[0])
+
+    return render_template('test.html')
 
 @app.route('/about')
 def about():
@@ -15,32 +39,11 @@ def about():
 def contact():
     return render_template('contact.html')
 
-@app.route('/test')
-def test():
-    return render_template('test.html')
-
-@app.route('/predict', methods=['POST'])
+@app.route('/predict')
 def predict():
-    if request.method == 'POST':
-        # Get user inputs from the form
-        high_bp = int(request.form['HighBP'])
-        high_chol = int(request.form['HighChol'])
-        bmi = float(request.form['BMI'])
-        gen_hlth = int(request.form['GenHlth'])
-        ment_hlth = int(request.form['MentHlth'])
-        phys_hlth = int(request.form['PhysHlth'])
-        diff_walk = int(request.form['DiffWalk'])
-        age = int(request.form['Age'])
-        income = int(request.form['Income'])
-        physical_hlth = int(request.form['PhysicalHlth'])
+    return render_template('predict.html')
 
-        # Call your machine learning model to make a prediction
-     #   prediction = your_ml_model.predict([[high_bp, high_chol, bmi, gen_hlth, ment_hlth, phys_hlth, diff_walk, age, income, physical_hlth]])
-        # Modify this line based on your model's input format
 
-        # Return the prediction to the user
-    #    return render_template('predict.html', prediction=prediction[0])
-        # Modify this line based on your result rendering
 
 if __name__ == '__main__':
     app.run(debug=True)
