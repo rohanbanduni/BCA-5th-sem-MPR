@@ -27,7 +27,7 @@
       </div>
   </div>
 
-  <div class="container bg-info p-4 my-2 rounded-3">
+  <div class="container bg-light p-4 my-2 rounded-3">
   <h2 class="mb-4 text-center">User Input Form</h2>
   <form action="{{ url_for('test') }}" method="post">
       <!-- High Blood Pressure -->
@@ -56,163 +56,25 @@
           </div>
       </div>
 
-      <!-- Cholesterol Check -->
-      <div class="form-group mb-4">
-          <label>3. Cholesterol Check in 5 years:</label>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="CholCheck" value="0" checked>
-              <label class="form-check-label">No</label>
-          </div>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="CholCheck" value="1">
-              <label class="form-check-label">Yes</label>
-          </div>
-      </div>
 
       <!-- BMI -->
       <div class="form-group mb-4">
-          <label for="BMI">4. Body Mass Index:</label>
+          <label for="BMI">3. Body Mass Index:</label>
           <input type="text" class="form-control" name="BMI" placeholder="Enter your BMI here." required>
       </div>
 
-      <!-- Smoker -->
-      <div class="form-group mb-4">
-          <label>5. Smoking Status:</label>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="Smoker" value="0" checked>
-              <label class="form-check-label">No</label>
-          </div>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="Smoker" value="1">
-              <label class="form-check-label">Yes</label>
-          </div>
-      </div>
-
-<!-- Stroke -->
-<div class="form-group mb-4">
-  <label>6. History of Stroke:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="Stroke" value="0" checked>
-      <label class="form-check-label">No</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="Stroke" value="1">
-      <label class="form-check-label">Yes</label>
-  </div>
-</div>
-
-<!-- Heart Disease or Heart Attack -->
-<div class="form-group mb-4">
-  <label>7. History of Heart Disease or Heart Attack:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="HeartDiseaseorAttack" value="0" checked>
-      <label class="form-check-label">No</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="HeartDiseaseorAttack" value="1">
-      <label class="form-check-label">Yes</label>
-  </div>
-</div>
-
-<!-- Physical Activity -->
-<div class="form-group mb-4">
-  <label>8. Physical Activity in past 30 days:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="PhysActivity" value="0" checked>
-      <label class="form-check-label">No</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="PhysActivity" value="1">
-      <label class="form-check-label">Yes</label>
-  </div>
-</div>
-
-<!-- Fruits -->
-<div class="form-group mb-4">
-  <label>9. Consume Fruits 1 or more times per day:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="Fruits" value="0" checked>
-      <label class="form-check-label">No</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="Fruits" value="1">
-      <label class="form-check-label">Yes</label>
-  </div>
-</div>
-
-<!-- Veggies -->
-<div class="form-group mb-4">
-  <label>10. Consume Vegetables 1 or more times per day:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="Veggies" value="0" checked>
-      <label class="form-check-label">No</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="Veggies" value="1">
-      <label class="form-check-label">Yes</label>
-  </div>
-</div>
-
-<!-- HvyAlcoholConsump -->
-<div class="form-group mb-4">
-  <label>11. Heavy Alcohol Consumption:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="HvyAlcoholConsump" value="0" checked>
-      <label class="form-check-label">No</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="HvyAlcoholConsump" value="1">
-      <label class="form-check-label">Yes</label>
-  </div>
-</div>
-
-<!-- AnyHealthcare -->
-<div class="form-group mb-4">
-  <label>12. Access to Any Healthcare:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="AnyHealthcare" value="0" checked>
-      <label class="form-check-label">No</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="AnyHealthcare" value="1">
-      <label class="form-check-label">Yes</label>
-  </div>
-</div>
-
-<!-- NoDocbcCost -->
-<div class="form-group mb-4">
-  <label>13. No Doctor because of Cost:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="NoDocbcCost" value="0" checked>
-      <label class="form-check-label">No</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="NoDocbcCost" value="1">
-      <label class="form-check-label">Yes</label>
-  </div>
-</div>
-
+   
 <!-- GenHlth -->
 <div class="form-group mb-4">
-  <label>14. General Health (1 = excellent, 2 = very good, 3 = good, 4 = fair, 5 = poor):</label>
+  <label>4. General Health (1 = excellent, 2 = very good, 3 = good, 4 = fair, 5 = poor):</label>
   <input type="number" class="form-control" name="GenHlth" min="1" max="5" required>
 </div>
 
-<!-- MentHlth -->
-<div class="form-group mb-4">
-  <label>15. Mental Health (Days not good in the past 30 days):</label>
-  <input type="number" class="form-control" name="MentHlth" min="0" max="30" required>
-</div>
 
-<!-- PhysHlth -->
-<div class="form-group mb-4">
-  <label>16. Physical Health (Days not good in the past 30 days):</label>
-  <input type="number" class="form-control" name="PhysHlth" min="0" max="30" required>
-</div>
 
 <!-- DiffWalk -->
 <div class="form-group mb-4">
-  <label>17. Difficulty in Walking:</label>
+  <label>5. Difficulty in Walking:</label>
   <div class="form-check">
       <input class="form-check-input" type="radio" name="DiffWalk" value="0" checked>
       <label class="form-check-label">No</label>
@@ -223,23 +85,12 @@
   </div>
 </div>
 
-<!-- Sex -->
-<div class="form-group mb-4">
-  <label>18. Gender:</label>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="Sex" value="0" checked>
-      <label class="form-check-label">Female</label>
-  </div>
-  <div class="form-check">
-      <input class="form-check-input" type="radio" name="Sex" value="1">
-      <label class="form-check-label">Male</label>
-  </div>
-</div>
+
 
 <!-- Age -->
 <div class="form-group mb-4">
-  <label>19. Age Bracket:</label>
-  <select class="form-control" name="Age" required>
+  <label>6. Age Bracket:</label>
+  <select class="form-select" name="Age" required>
       <option value="1">Age 18 to 24</option>
       <option value="2">Age 25 to 29</option>
       <option value="3">Age 30 to 34</option>
@@ -256,23 +107,12 @@
   </select>
 </div>
 
-<!-- Education -->
-<div class="form-group mb-4">
-  <label>20. Education Level (1 to 6):</label>
-  <select class="form-control" name="Education" required>
-    <option value="1">Never attended school or only kindergarten</option>
-    <option value="2">Grades 1 through 8 (Elementary)</option>
-    <option value="3">Grades 9 through 11 (Some high school)</option>
-    <option value="4">Grade 12 or GED (High school graduate)</option>
-    <option value="5">College 1 year to 3 years (Some college or technical school)</option>
-    <option value="6">College 4 years or more</option>  
-</select>
-</div>
+
 
 <!-- Income -->
 <div class="form-group mb-4">
-  <label>21. Income Bracket:</label>
-  <select class="form-control" name="Income" required>
+  <label>7. Income Bracket:</label>
+  <select class="form-select" name="Income" required>
       <option value="1">Less than $10,000</option>
       <option value="2">Less than $15,000</option>
       <option value="3">Less than $20,000</option>
@@ -284,9 +124,7 @@
   </select>
 </div>
 
-
-
-      <button type="submit" class="btn btn-primary">Predict</button>
+  <button type="submit" class="btn btn-primary">Predict</button>
   </form>
 </div>
 
