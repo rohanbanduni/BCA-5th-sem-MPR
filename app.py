@@ -19,12 +19,10 @@ def test():
     if request.method == 'POST':
         user_input = []
         features = [
-            'HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack',
-            'PhysActivity', 'Fruits', 'Veggies', 'HvyAlcoholConsump', 'AnyHealthcare', 'NoDocbcCost',
-            'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Sex', 'Age', 'Education', 'Income'
+            'HighBP', 'HighChol', 'BMI', 'GenHlth', 'DiffWalk', 'Age', 'Income'
         ]
         for feature in features:
-            user_input.append(int(request.form.get(feature)))
+            user_input.append((request.form.get(feature)))
 
         prediction = model.predict([user_input])
         return render_template('predict.html', prediction=prediction[0])
